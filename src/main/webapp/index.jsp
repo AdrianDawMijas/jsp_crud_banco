@@ -5,7 +5,7 @@
 <body>
 Redirigiendo. Por favor, espere...
 <%
-    response.sendRedirect("ListarSociosServlet");
+    response.sendRedirect("LoginUsuarioServlet");
 %>
 </body>
 </html>
