@@ -1,13 +1,13 @@
 package ies.vgm.jsp_crud_gestibank.servlet;
 
+import ies.vgm.jsp_crud_gestibank.dao.UsuarioDAO;
+import ies.vgm.jsp_crud_gestibank.dao.UsuarioDAOImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.iesvdm.jsp_servlet_jdbc.dao.UsuarioDAO;
-import org.iesvdm.jsp_servlet_jdbc.dao.UsuarioDAOImpl;
 
 import java.io.IOException;
 
