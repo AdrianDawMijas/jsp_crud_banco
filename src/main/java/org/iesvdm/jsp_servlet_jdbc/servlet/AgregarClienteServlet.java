@@ -29,7 +29,6 @@ public class AgregarClienteServlet extends HttpServlet {
         if (nombre == null || direccion == null || telefono == null || fechaNacimiento == null ||
                 nombre.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || fechaNacimiento.isEmpty()) {
             request.setAttribute("error", "Todos los campos son obligatorios.");
-            request.getRequestDispatcher("formularioAgregarCliente.jsp").forward(request, response);
             return;
         }
 
@@ -49,6 +48,6 @@ public class AgregarClienteServlet extends HttpServlet {
         }
 
         // Redirigir al formulario
-        request.getRequestDispatcher("/WEB-INF/jsp/listarClientes.jsp").forward(request, response);
+        response.sendRedirect("ListadoClientesServlet");
     }
 }

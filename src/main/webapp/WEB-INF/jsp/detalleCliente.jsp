@@ -20,14 +20,13 @@
         <p><strong>Dirección:</strong> <%= cliente.getDireccion() %></p>
         <p><strong>Teléfono:</strong> <%= cliente.getTelefono() %></p>
         <p><strong>Fecha de nacimiento:</strong> <%= cliente.getFechaNacimiento() %></p>
-        <a href="listaClientes.jsp" class="btn btn-secondary mt-3">Volver</a>
+        <form method="get" action="ListadoClientesServlet">
+            <button class="btn btn-secondary mt-3">Volver</button>
+        </form>
         <%
         } else {
         %>
         <p class="text-center text-danger">Cliente no encontrado.</p>
-        <form method="get" action="ListadoClientesServlet">
-            <button class="btn btn-secondary mt-3">Volver</button>
-        </form>
         <%
             }
         %>

@@ -31,7 +31,7 @@ public class BorrarClienteServlet extends HttpServlet {
                 clienteDAO.delete(id);
 
                 // Redirigir al listado de clientes
-                response.sendRedirect("ListarClientesServlet");
+                response.sendRedirect("ListadoClientesServlet");
 
             } catch (NumberFormatException e) {
                 // Manejar si el id no es un número válido
