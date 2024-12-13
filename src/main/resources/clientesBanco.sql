@@ -23,3 +23,73 @@ INSERT INTO `cliente` (`nombre`, `direccion`, `telefono`, `fecha_nacimiento`) VA
                                                                                   ('Laura Torres', 'Callejón del Río 12', '901234567', '1992-04-10'),
                                                                                   ('Sofía Vega', 'Calle Primavera 7', '567890123', '1988-02-28'),
                                                                                   ('Manuel Castro', 'Calle Otoño 20', '678901234', '1999-08-15');
+
+
+/*
+Por si necesitas hacer un join calculando numero de empleados, el left join es por si es 0
+
+d.id_departamento,
+    d.nombre_departamento,
+    COUNT(e.id_empleado) AS numero_empleados
+FROM
+    departamentos d
+LEFT JOIN
+    empleados e
+ON
+    d.id_departamento = e.id_departamento
+GROUP BY
+    d.id_departamento, d.nombre_departamento;
+
+
+Por si necesitas hacer un beetween entre dos valores.
+
+SELECT
+    id_departamento,
+    nombre_departamento,
+    (presupuesto - gastos) AS presupuesto_actual_disponible
+FROM
+    departamentos
+WHERE
+    (presupuesto - gastos) BETWEEN ? AND ?;
+
+PARA LOS EMPLEADOS QUE TIENEN UN DEPARTAMENTO ASIGNADO.
+
+SELECT
+    e.id_empleado,
+    e.nombre_empleado,
+    d.nombre_departamento
+FROM
+    empleados e
+INNER JOIN
+    departamentos d
+ON
+    e.id_departamento = d.id_departamento;
+
+
+NOMBRE DE EMPLEADO QUE CONTIENE UNA LETRA
+
+SELECT
+    id_empleado,
+    nombre_empleado
+FROM
+    empleados
+WHERE
+    nombre_empleado LIKE '%A%';
+
+
+SUMAR PRESUPUESTOS
+
+SELECT
+    d.id_departamento,
+    d.nombre_departamento,
+    SUM(e.gastos) AS total_gastos
+FROM
+    empleados e
+INNER JOIN
+    departamentos d
+ON
+    e.id_departamento = d.id_departamento
+GROUP BY
+    d.id_departamento, d.nombre_departamento;
+*/
+
